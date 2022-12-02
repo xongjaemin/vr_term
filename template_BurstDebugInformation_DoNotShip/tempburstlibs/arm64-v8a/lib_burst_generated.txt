@@ -193,8 +193,8 @@ Library: lib_burst_generated
 --root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.Subsystem.Registration.dll
 --root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 --root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll
---root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.RuntimeDebugger.dll
 --root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
+--root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.RuntimeDebugger.dll
 --root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll
 --root-assembly=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.OculusQuestSupport.dll
 --assembly-folder=/Users/songjaemin/Develop_works/in-class/VR/meta-quest2-unity-template/Temp/StagingArea/Data/Managed/
