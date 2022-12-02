@@ -4,33 +4,36 @@ using UnityEngine;
 using System;
 using System.Linq;
 
+
 [RequireComponent(typeof(ParticleSystem))]
 public class FireworksParticleSoundSystem : MonoBehaviour
 {
+    AudioSource audioSource;
 
-    AudioSource audioSoure;
 
     void Start()
     {
-        audioSoure = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         while (true)
         {
-            audioSoure.Play();
+            audioSource.Play();
         }
     }
 
     private void ApplyExplosionForceInArea(Vector3 position, bool applyPhysicsForce = true, bool applyShakeEffect = true)
     {
-        audioSoure.Play();
+        audioSource.Play();
     }
 
-    private class ParticleDelta
+    private class ParticleData
     {
         public IList<ParticleSystem.Particle> Added { get; set; } = new List<ParticleSystem.Particle>();
+
         public IList<ParticleSystem.Particle> Removed { get; set; } = new List<ParticleSystem.Particle>();
+
     }
 }
