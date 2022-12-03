@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Gachon
   productName: Meta Quest2 Template
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -141,6 +141,10 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: a0a2b797ef433a8418232957b936ada0, type: 2}
+  - {fileID: 8347615603617956834, guid: 305d08828de233e4c9b8869e89e3d940, type: 2}
+  - {fileID: 11400000, guid: 5e3e7ee82053f694db5f408f765fff4a, type: 2}
+  - {fileID: -335493925092258958, guid: 92e2c4c59512d4df0868dffb8d76945d, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -263,7 +267,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180

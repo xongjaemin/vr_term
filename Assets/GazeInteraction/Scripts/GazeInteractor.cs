@@ -19,8 +19,12 @@ namespace TS.GazeInteraction
 
         private GazeReticle _reticle;
         private GazeInteractable _interactable;
+        private float aimDistance = 10.0f;
 
         private float _enterStartTime;
+        private Vector3 screenCenter;
+
+        public GameObject fireworks;
 
         #endregion
 
@@ -36,11 +40,14 @@ namespace TS.GazeInteraction
 
             _reticle = Instantiate(reticle);
             _reticle.SetInteractor(this);
+
+            screenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         }
         private void Update()
         {
+            _ray = Camera.main.ScreenPointToRay(screenCenter);
+            _reticle.Enable(true);
 
-            _ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             if (Physics.Raycast(_ray, out _hit, Mathf.Infinity))
             {
 
@@ -57,54 +64,21 @@ namespace TS.GazeInteraction
                 }
 
                 _reticle.SetTarget(_hit);
-                _reticle.Enable(true);
-
-                var interactable = _hit.collider.transform.GetComponent<GazeInteractable>();
-                if(interactable == null)
-                {
-                    Reset();
-                    return;
-                }
-
-                if (interactable != _interactable)
-                {
-                    Reset();
-
-                    _enterStartTime = Time.time;
-
-                    _interactable = interactable;
-                    _interactable.GazeEnter(this, _hit.point);
-                }
-
-                _interactable.GazeStay(this, _hit.point);
-
-                if (_interactable.IsActivable && !_interactable.IsActivated)
-                {
-                    var timeToActivate = (_enterStartTime + _timeToActivate) - Time.time;
-                    var progress = 1 - (timeToActivate / _timeToActivate);
-                    progress = Mathf.Clamp(progress, 0, 1);
-
-                    _reticle.SetProgress(progress);
-
-                    if (progress == 1)
-                    {
-                        _reticle.Enable(false);
-                        _interactable.Activate();
-                    }
-                }
-
-                return;
+                fireworks.transform.position = _hit.transform.position;
+                
+            } else
+            {
+                var pos = _ray.origin + _ray.direction * aimDistance;
+                _reticle.SetPos(pos);
+                fireworks.transform.position = pos;
             }
-
-            _reticle.Enable(false);
-            Reset();
         }
 
         private void Reset()
         {
             _reticle.SetProgress(0);
 
-            if(_interactable == null) { return; }
+            if (_interactable == null) { return; }
             _interactable.GazeExit(this);
             _interactable = null;
         }

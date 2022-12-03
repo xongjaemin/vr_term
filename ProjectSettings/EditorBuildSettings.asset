@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Dezert.unity
     guid: ccf079628c8a2e84faa81ab5c41d6dac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Pack02Demo01.unity
     guid: 6ef6af30b6f0f5e40aebb4e46ec08d61
   - enabled: 1

@@ -57,6 +57,15 @@ namespace TS.GazeInteraction
 
             transform.SetPositionAndRotation(position, rotation);
         }
+
+	public void SetPos(Vector3 point) 
+	{
+		var direction = _interactor.transform.position - point;
+            var rotation = Quaternion.FromToRotation(Vector3.forward, direction);
+            var position = point + transform.forward * _offsetFromHit;
+
+            transform.SetPositionAndRotation(position, rotation);
+	}
         public void SetProgress(float progress)
         {
             _imageProgress.fillAmount = progress;
